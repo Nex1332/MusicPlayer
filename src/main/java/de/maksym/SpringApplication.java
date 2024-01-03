@@ -1,6 +1,7 @@
 package de.maksym;
 
 import de.maksym.Controller.Computer;
+import de.maksym.Music.Enum.MusicType;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class SpringApplication {
@@ -9,8 +10,10 @@ public class SpringApplication {
                 "applicationContext.xml"
         );
 
+        MusicType classical = MusicType.CLASSICAL;
+
         Computer computer = context.getBean("computer", Computer.class);
-        System.out.println(computer);
+        computer.toPrint(classical);
 
         context.close();
     }

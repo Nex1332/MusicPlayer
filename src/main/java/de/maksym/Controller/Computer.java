@@ -1,5 +1,6 @@
 package de.maksym.Controller;
 
+import de.maksym.Music.Enum.MusicType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -14,8 +15,8 @@ public class Computer {
         this.musicPlayer = musicPlayer;
     }
 
-    @Override
-    public String toString() {
-        return "Computer " + id + " is Playing " + musicPlayer.playMusic();
+    public void toPrint(MusicType musicType) {
+        System.out.println("Computer " + id + " is Playing: " );
+        musicPlayer.playMusic(musicType);
     }
 }
