@@ -7,15 +7,14 @@ import java.util.ArrayList;
 
 @Component
 public class RussianMusic implements Music {
-    private ArrayList<String> musicsList = new ArrayList<>();
-    @Override
-    public void getSong() {
+    private final ArrayList<String> musicsList = new ArrayList<>();
+    {
         musicsList.add("17 let");
         musicsList.add("Perezvonii");
         musicsList.add("Sistema");
-
-        int idSong = (int) (Math.random()*2);
-
-        musicsList.get(idSong);
+    }
+    @Override
+    public ArrayList<String> getSong() {
+        return musicsList;
     }
 }

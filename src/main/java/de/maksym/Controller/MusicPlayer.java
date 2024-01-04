@@ -6,29 +6,40 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
+import java.util.Random;
+
 @Component
 public class MusicPlayer  {
-    private final Music rock;
-    private final Music classical;
-    private final Music russian;
+    private final Music music;
+    private final Music music1;
+    private final Music music2;
 
     @Autowired
-    public MusicPlayer(@Qualifier("classicMusic") Music classical,
-                       @Qualifier("rockMusic") Music rock,
-                       @Qualifier("russianMusic") Music russian) {
-        this.classical = classical;
-        this.rock = rock;
-        this.russian = russian;
+    public MusicPlayer(@Qualifier("classicMusic") Music music1,
+                       @Qualifier("rockMusic") Music music,
+                       @Qualifier("russianMusic") Music music2) {
+        this.music1 = music1;
+        this.music = music;
+        this.music2 = music2;
     }
 
-    public void playMusic(MusicType musicType) {
+    public String playMusic(MusicType musicType) {
+        Random random = new Random();
+
+        int randomNumber = random.nextInt(3);
+
         switch (musicType) {
-            case ROCK ->
-                rock.getSong();
-            case CLASSICAL ->
-                classical.getSong();
-            case RUSSIAN ->
-                russian.getSong();
+            case ROCK -> {
+                return music.getSong().get(randomNumber);
+            }
+            case CLASSICAL -> {
+                return music1.getSong().get(randomNumber);
+            }
+            case RUSSIAN -> {
+                return music2.getSong().get(randomNumber);
+            }
         }
+
+        return "There`s no song";
     }
 }

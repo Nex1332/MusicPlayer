@@ -13,7 +13,7 @@ public class SpringApplication {
         MusicType classical = MusicType.CLASSICAL;
 
         Computer computer = context.getBean("computer", Computer.class);
-        computer.toPrint(classical);
+        computer.toString(classical);
 
         context.close();
     }

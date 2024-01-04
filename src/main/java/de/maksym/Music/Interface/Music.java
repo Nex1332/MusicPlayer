@@ -1,10 +1,7 @@
 package de.maksym.Music.Interface;
 
-import de.maksym.Music.RockMusic;
-
-import java.awt.List;
-import java.util.*;
+import java.util.ArrayList;
 
 public interface Music {
-     public void getSong();
+     ArrayList<String> getSong();
 }
