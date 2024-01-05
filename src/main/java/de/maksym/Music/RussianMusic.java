@@ -5,7 +5,6 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 
-@Component
 public class RussianMusic implements Music {
     private final ArrayList<String> musicsList = new ArrayList<>();
     {

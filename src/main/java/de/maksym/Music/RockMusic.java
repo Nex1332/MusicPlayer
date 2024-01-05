@@ -5,7 +5,6 @@ import org.springframework.stereotype.Component;
 
 import java.util.*;
 
-@Component
 public class RockMusic implements Music {
     private final ArrayList<String> musicsList = new ArrayList<>();
     {
