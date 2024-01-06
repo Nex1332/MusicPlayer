@@ -10,10 +10,8 @@ import de.maksym.Music.RockMusic;
 import de.maksym.Music.RussianMusic;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
 
 @Configuration
-@PropertySource("classpath:musicPlayer.properties")
 public class SpringConfig {
     @Bean
     public ClassicMusic classicMusic(){
